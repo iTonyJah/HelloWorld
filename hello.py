@@ -1,1 +1,3 @@
-print('Hello, world!')
+foo = 'Hello,'
+bar = 'world!'
+print(foo, bar)
