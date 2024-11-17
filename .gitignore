@@ -2,6 +2,9 @@
 *.[oa]
 *~
 
+# All .idea to ignore. Test for me
+.idea
+
 # VisualStudioCode
 # Ignore files in directory, not the directory itself
 
