@@ -21,3 +21,24 @@ print(Anton)
 set_list.append(Anton)
 set_list.extend(Anton)
 print(set_list)
+c = 1
+i = 1
+print(i)
+
+multiplier_set = (
+    73,
+    73037,
+    7300037,
+    730737037,
+    730000737000037,
+    730000000737000000037,
+)
+
+power = 5
+multiplier = multiplier_set[-3]
+print(multiplier)
+
+while i < power**power**power:
+    i *= multiplier
+    c += 1
+print(type(i), c)
