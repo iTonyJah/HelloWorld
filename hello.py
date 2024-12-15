@@ -35,10 +35,38 @@ multiplier_set = (
 )
 
 power = 5
-multiplier = multiplier_set[-3]
+multiplier = multiplier_set[-2]
 print(multiplier)
 
 while i < power**power**power:
     i *= multiplier
     c += 1
 print(type(i), c)
+
+a = type(int(float('123.5')))
+b = type(int(524 ** 12)) #441345311145345))
+c = type(int('342'))
+d = type(int(float('-17.132')))
+print(a, b, c, d)
+
+name = 'Anton Lysogor'
+cell = +79261086838
+address = 'Oleko Dundicha, 34, 55'
+print(name, cell, address)
+
+e = 11 * 2 ** 2 - 13 / 4 + 7
+p = 2 ** 2
+aa = 11 * p
+bb = 13 / 4
+cc = 7
+print(aa, bb, cc, aa - bb + cc)
+print(e)
+
+n = None
+print(n , type(n))
+
+def name():
+    n = input("Введите ваше имя: ")
+    print('Приветствую вас, ' + n + '!')
+
+name()
