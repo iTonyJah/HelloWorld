@@ -63,10 +63,16 @@ print(aa, bb, cc, aa - bb + cc)
 print(e)
 
 n = None
-print(n , type(n))
+str = '123.457'
+boo = True
+foo = False
+fract = 1/3
+print(n , type(n), type(int(float(str))), type(int(boo)), type(int(foo)), type(int(fract)))
 
-def name():
-    n = input("Введите ваше имя: ")
-    print('Приветствую вас, ' + n + '!')
+def hello():
+    name = input("Введите ваше имя: ")
+    hello = 'Приветствую вас, ' + name + '!'
+    return(hello)
 
-name()
+print(hello())
+
