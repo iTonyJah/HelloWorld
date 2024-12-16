@@ -11,14 +11,13 @@ while i < 3:
     set_list.append(i)
     i += 1
 
-for i in set_list:
-    print(i, type(i), set_list[i])
-
 Anton = ['A', 'n', 't', 'o', 'n']
 
 set_list.append(Anton)
 set_list.extend(Anton)
 print(set_list)
+
+### some counts in cycles
 c = 1
 i = 1
 print(i)
@@ -41,6 +40,7 @@ while i < power**power**power:
     c += 1
 print(type(i), c)
 
+### test for wrokbook types in Python
 a = type(int(float('123.5')))
 b = type(int(524 ** 12)) #441345311145345))
 c = type(int('342'))
@@ -73,4 +73,14 @@ def sq_hund_calc():
     b = int(input('Введите ширину участка в метрах: '))
     sq = a * b // 100
     return("Площадь участка: " + str(sq) + " соток.")
+
+def numbers_sum(): #get the 4 digit nubmer and return its sum
+    numb = input('Введите четырёхзначное число: ')
+    sum = 0
+    for i in numb:
+        sum += int(i)
+    return(sum)
+
+
+print(numbers_sum())
 
