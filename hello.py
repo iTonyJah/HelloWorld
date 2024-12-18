@@ -95,11 +95,12 @@ def delivery_calc(num_goods):
     return(delivery_cost)
 
 def how_many_secs():
-    inp = input('Введите количество дней,часов, минут и секунд через пробел: ')
+    inp = input('Введите количество дней, часов, минут и секунд через пробел: ')
     inp_set = inp.split()
-    
+    inp_set.sort(reverse=True)
 
-    print(inp_set)
+    for i in inp_set:
+        print(int(i), inp_set.index(i))
 
 
 how_many_secs()
