@@ -94,4 +94,8 @@ def delivery_calc(num_goods):
     delivery_cost  = (int(num_goods) - 1) * 30 + 100
     return(delivery_cost)
 
-print(delivery_calc(5))
+def how_many_secs():
+    inp = input('Введите количество дней часов минут и секунд, через пробел: ')
+    print(inp)
+
+how_many_secs()
