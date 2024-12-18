@@ -79,8 +79,19 @@ def numbers_sum(): #get the 4 digit nubmer and return its sum
     sum = 0
     for i in numb:
         sum += int(i)
-    return(sum)
+    return(f'Сумма цифр равна {sum}')
 
+def sq_room_calc():
+  l_room = float(input('Введите длину комнаты в метрах, дробную часть отделите точкой: '))
+  w_room = float(input('Введите ширину комнаты в метрах, дробную часть отделите точкой: '))
+  return(f'Площадь комнаты {l_room * w_room} метров.')
 
-print(numbers_sum())
+def median_of_three(set_three):
+    from statistics import median
+    return(median(set_three))
 
+def delivery_calc(num_goods):
+    delivery_cost  = (int(num_goods) - 1) * 30 + 100
+    return(delivery_cost)
+
+print(delivery_calc(5))
