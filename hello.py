@@ -96,11 +96,29 @@ def delivery_calc(num_goods):
 
 def how_many_secs():
     inp = input('Введите количество дней, часов, минут и секунд через пробел: ')
-    inp_set = inp.split()
-    inp_set.sort(reverse=True)
+    inp_list = inp.split()
+    print(inp_list)
 
-    for i in inp_set:
-        print(int(i), inp_set.index(i))
+    secs = 0
+    counter = 0
+    for every in inp_list:
+        numb = int(every)
+
+        if counter == 0: #days
+            secs += numb * 60 * 60 * 24
+
+        if counter == 1: #hours
+            secs += numb * 60 * 60
+
+        if counter == 2: #hminutes
+            secs += numb * 60
+
+        if counter == 3: #seconds
+            secs += numb
+
+        counter += 1
+
+    return secs
 
 
-how_many_secs()
+print(how_many_secs())
