@@ -103,22 +103,18 @@ def how_many_secs():
     counter = 0
     for every in inp_list:
         numb = int(every)
-
         if counter == 0: #days
             secs += numb * 60 * 60 * 24
-
         if counter == 1: #hours
             secs += numb * 60 * 60
-
         if counter == 2: #hminutes
             secs += numb * 60
-
         if counter == 3: #seconds
             secs += numb
-
         counter += 1
-
     return secs
 
+def check_if_anagram():
+    words = input('Введите два слова через пробел: ')
 
-print(how_many_secs())
+
