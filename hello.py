@@ -1,3 +1,5 @@
+from IPython.lib.clipboard import win32_clipboard_get
+
 foo = 'Hello, world!'
 bar = 'from branch feature-1'
 bar += ' and from VSC as well'
@@ -116,5 +118,13 @@ def how_many_secs():
 
 def check_if_anagram():
     words = input('Введите два слова через пробел: ')
+    w_list = words.split()
+    w1 = w_list[0]
+    w2 = w_list[1]
+    w1 = w1.lower()
+    w2 = w2.lower()
+    w2_reverse = w2[::-1]
+    return w1 == w2_reverse
 
 
+print(check_if_anagram())
