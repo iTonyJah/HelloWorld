@@ -126,5 +126,7 @@ def check_if_anagram():
     w2_reverse = w2[::-1]
     return w1 == w2_reverse
 
-
-print(check_if_anagram())
+def count_days_in_month():
+    month_name = input('Введите название месяца: ')
+    month_name = month_name.lower()
+    # созать словарь месяц-кол.дней или попробвать найти встроенные методы работы с датами
