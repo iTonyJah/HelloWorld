@@ -158,9 +158,20 @@ def count_days_in_month():
     return(month_days.get(month_name))
 
 
-days = count_days_in_month()
-print('В этом месяце:', days, 'дней.')
+def price_calc():
+    input_str = input('Введите возраст каждого посетителя через запятую: ')
+    input_list = input_str.split(',')
+    cost = 0
+    for every in input_list:
+        age = int(every)
+        if age < 2 or age > 65:
+            cost += 0
+        elif age > 2 and age < 12:
+            cost += 200
+        else:
+            cost += 500
+
+    return(cost)
 
 
-
-
+print(price_calc())
