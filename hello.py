@@ -1,5 +1,3 @@
-from IPython.lib.clipboard import win32_clipboard_get
-
 foo = 'Hello, world!'
 bar = 'from branch feature-1'
 bar += ' and from VSC as well'
@@ -127,6 +125,45 @@ def check_if_anagram():
     return w1 == w2_reverse
 
 def count_days_in_month():
-    month_name = input('Введите название месяца: ')
-    month_name = month_name.lower()
-    # созать словарь месяц-кол.дней или попробвать найти встроенные методы работы с датами
+    days_31 = {
+        'january', 'январь',
+        'march', 'март',
+        'may', 'май',
+        'july', 'июль',
+        'august', 'август',
+        'october', 'октябрь',
+        'december', 'декабрь'
+    }
+    days_30 = {
+        'april', 'апрель',
+        'june', 'июнь',
+        'september', 'сентябрь',
+        'november', 'ноябрь'
+    }
+    days_28 = {'february', 'февраль'}
+
+    month_days = {
+        'january' : 31,
+        'январь' : 31,
+        'march': 31,
+        'март' : 31,
+        'may' : 31,
+        'май' : 31,
+        'july' : 31,
+        'июль' : 31,
+        'august' : 31,
+        'август' : 31,
+        'october' : 31,
+        'октябрь' : 31,
+        'december' : 31,
+        'декабрь' : 31
+    }
+
+    print(month_days)
+
+    #month_name = input('Введите название месяца: ')
+    #month_name = month_name.lower()
+
+
+
+count_days_in_month()
