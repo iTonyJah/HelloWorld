@@ -125,22 +125,6 @@ def check_if_anagram():
     return w1 == w2_reverse
 
 def count_days_in_month():
-    days_31 = {
-        'january', 'январь',
-        'march', 'март',
-        'may', 'май',
-        'july', 'июль',
-        'august', 'август',
-        'october', 'октябрь',
-        'december', 'декабрь'
-    }
-    days_30 = {
-        'april', 'апрель',
-        'june', 'июнь',
-        'september', 'сентябрь',
-        'november', 'ноябрь'
-    }
-    days_28 = {'february', 'февраль'}
 
     month_days = {
         'january' : 31,
@@ -156,14 +140,27 @@ def count_days_in_month():
         'october' : 31,
         'октябрь' : 31,
         'december' : 31,
-        'декабрь' : 31
+        'декабрь' : 31,
+        'april' : 30,
+        'апрель' : 30,
+        'june' : 30,
+        'июнь' : 30,
+        'september' : 30,
+        'сентябрь' : 30,
+        'november' : 30,
+        'ноябрь' : 30,
+        'february' : '28/29'
     }
 
-    print(month_days)
+    month_name = input('Введите название месяца: ')
+    month_name = month_name.lower()
 
-    #month_name = input('Введите название месяца: ')
-    #month_name = month_name.lower()
+    return(month_days.get(month_name))
+
+
+days = count_days_in_month()
+print('В этом месяце:', days, 'дней.')
 
 
 
-count_days_in_month()
+
