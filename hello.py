@@ -217,4 +217,21 @@ def cycle_xy_task():
     return y
 
 
-print(cycle_xy_task())
+def cripta_July_Cesar():
+    letters_small = list('qwertyuioplkjhgfdsazxcvbnm')
+    letters_big = list('QWERTYUIOPLKJHGFDSAZXCVBNM')
+    letters = letters_small + letters_big
+    letters.sort()
+    print(letters)
+    print(letters[1+3], letters.index(letters[1+3]))
+    original = list(input('Input statement to be cripted: '))
+    crypta = ''
+    print(original)
+    print(crypta)
+    i = 0
+    for every in original:
+        print(every, letters[i])
+        i += 1
+
+
+cripta_July_Cesar()
