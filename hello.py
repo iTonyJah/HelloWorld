@@ -149,7 +149,8 @@ def count_days_in_month():
         'сентябрь' : 30,
         'november' : 30,
         'ноябрь' : 30,
-        'february' : '28/29'
+        'february' : '28/29',
+        'февраль' : '28/29'
     }
 
     month_name = input('Введите название месяца: ')
@@ -174,4 +175,31 @@ def price_calc():
     return(cost)
 
 
-print(price_calc())
+def days_in_month_with_leap_year():
+
+    days_31_set = {1, 3, 5, 7, 8, 10, 12}
+    days_30_set = {4, 6, 9, 11}
+
+    input_str = input('Введите номер месяца и номер года через точку (ММ.ГГГГ): ')
+    input_list = input_str.split('.')
+    month_n = int(input_list[0])
+    year_n = int(input_list[1])
+
+    if month_n in days_31_set:
+        return 31
+    elif month_n in days_30_set:
+        return 30
+    elif month_n == 2:
+        if year_n % 400 == 0:
+            return 29
+        elif year_n % 100 == 0:
+            return 28
+        elif year_n % 4 == 0:
+            return 29
+        else:
+            return 28
+    else:
+        return False
+
+
+print(days_in_month_with_leap_year())
