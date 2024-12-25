@@ -217,21 +217,26 @@ def cycle_xy_task():
     return y
 
 
-def cripta_July_Cesar():
+def crypta_July_Cesar():
     letters_small = list('qwertyuioplkjhgfdsazxcvbnm')
+    letters_small.sort()
+    letters_small += 'abc'
     letters_big = list('QWERTYUIOPLKJHGFDSAZXCVBNM')
-    letters = letters_small + letters_big
-    letters.sort()
-    print(letters)
-    print(letters[1+3], letters.index(letters[1+3]))
-    original = list(input('Input statement to be cripted: '))
+    letters_big.sort()
+    letters_big += 'ABC'
+    letters = letters_big + letters_small
+
+    original = list(input('Input statement to be crypted: '))
     crypta = ''
-    print(original)
-    print(crypta)
-    i = 0
     for every in original:
-        print(every, letters[i])
-        i += 1
+        if every.isalpha():
+            crypted = letters[letters.index(every) + 3]
+        else:
+            crypted = every
+        crypta += crypted
+
+    print(''.join(original))
+    print(crypta)
 
 
-cripta_July_Cesar()
+crypta_July_Cesar()
