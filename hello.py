@@ -40,7 +40,7 @@ while i < power**power**power:
     c += 1
 print(type(i), c)
 
-### test for wrokbook types in Python
+### test for workbook types in Python
 a = type(int(float('123.5')))
 b = type(int(524 ** 12)) #441345311145345))
 c = type(int('342'))
@@ -238,5 +238,25 @@ def crypta_July_Cesar():
     print(''.join(original))
     print(crypta)
 
+def my_list():
+    my_list = [2, 4, 8]
+    print(my_list)
+    print(my_list[::-1])
+    print(my_list)
+    print(my_list.reverse())
+    print(my_list)
 
-crypta_July_Cesar()
+    # второе задание
+    a = [1, 1, 2, 3, 5, 8, 34, 55, 89]
+    a.sort()
+    for i in a:
+        if int(i) < 5:
+            print(i)
+
+def is_integer():
+    number = int(input('Введите целое число: '))
+    if number % 2 == 0:
+        print('Это число чётное.')
+    else:
+        print('Это число нечётное.')
+
