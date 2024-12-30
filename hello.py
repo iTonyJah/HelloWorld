@@ -260,6 +260,24 @@ def is_integer():
     else:
         print('Это число нечётное.')
 
-def a_b_c()
-    inp_val = input('Введите значения A, B, C через запятую: ')
-    in
+def a_b_c():
+    inp_str = input('Введите значения A, B, C через запятую: ')
+    inp_val = inp_str.split(',')
+    val_a = int(inp_val[0])
+    val_b = int(inp_val[1])
+    val_c = int(inp_val[2])
+
+    if val_a == val_b:
+        val_c = val_a + val_b
+        val_e = val_b + val_c
+    elif val_b < val_c:
+        val_a += val_b
+        val_e = val_a + val_c
+    else:
+        val_b += val_c
+        val_e = val_a + val_b
+
+     return val_e
+
+
+a_b_c()
