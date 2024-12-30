@@ -277,7 +277,25 @@ def a_b_c():
         val_b += val_c
         val_e = val_a + val_b
 
-     return val_e
+    return val_e
 
 
-a_b_c()
+def multiplication_table():
+    # печатаем заголовок
+    print(" ", end=" ")
+    for i in range(1, 11):
+        if i == 10:
+            print(i)
+        else:
+            print(i, end=" ")
+
+    for j in range(1, 11):
+        print(j, end = " ")
+        for i in range(1, 11):
+            if i == 10:
+                print(i * j)
+            else:
+                print(i * j, end=" ")
+
+
+multiplication_table()
