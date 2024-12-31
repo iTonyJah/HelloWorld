@@ -298,4 +298,28 @@ def multiplication_table():
                 print(str(i * j).ljust(3), end=" ")
 
 
-multiplication_table()
+def lottery_numbers():
+    import random
+    lot_numbs = random.sample(range(1, 49), 6)
+    lot_numbs.sort()
+    print(lot_numbs)
+
+
+def input_integers():
+    z = 1
+    z_list = []
+    while z != 0:
+        z = int(input('Введите целое число или 0 для завершения: '))
+        z_list.append(z)
+
+    z_list.sort()
+    for each_z in z_list:
+        if int(each_z) == 0: continue
+        print(each_z)
+
+
+def sum_of_inputs(z=None):
+    z = int(input('Введите число или "пустую строку" для завершения: '))
+
+
+sum_of_inputs()
