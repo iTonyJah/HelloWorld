@@ -282,20 +282,20 @@ def a_b_c():
 
 def multiplication_table():
     # печатаем заголовок
-    print(" ", end=" ")
+    print(" ".ljust(3), end=" ")
     for i in range(1, 11):
         if i == 10:
-            print(i)
+            print(str(i).ljust(3))
         else:
-            print(i, end=" ")
+            print(str(i).ljust(3), end=" ")
 
     for j in range(1, 11):
-        print(j, end = " ")
+        print(str(j).ljust(3), end = " ")
         for i in range(1, 11):
             if i == 10:
-                print(i * j)
+                print(str(i * j).ljust(3))
             else:
-                print(i * j, end=" ")
+                print(str(i * j).ljust(3), end=" ")
 
 
 multiplication_table()
