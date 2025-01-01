@@ -15,12 +15,10 @@ Anton = ['A', 'n', 't', 'o', 'n']
 
 set_list.append(Anton)
 set_list.extend(Anton)
-print(set_list)
 
 ### some counts in cycles
 c = 1
 i = 1
-print(i)
 
 multiplier_set = (
     73,
@@ -33,12 +31,10 @@ multiplier_set = (
 
 power = 5
 multiplier = multiplier_set[-2]
-print(multiplier)
 
 while i < power**power**power:
     i *= multiplier
     c += 1
-print(type(i), c)
 
 ### test for workbook types in Python
 a = type(int(float('123.5')))
@@ -61,38 +57,44 @@ string = '123.457'
 boo = True
 foo = False
 fract = 1/3
-print(n , type(n), type(int(float(string))), type(int(boo)), type(int(foo)), type(int(fract)))
+
 
 def hello():
-    name = input("Введите ваше имя: ")
-    hello = 'Приветствую вас, ' + name + '!'
-    return(hello)
+    inp_name = input("Введите ваше имя: ")
+    out_hello = 'Приветствую вас, ' + inp_name + '!'
+    return out_hello
+
 
 def sq_hund_calc():
-    a = int(input('Введите длину участка в метрах: '))
-    b = int(input('Введите ширину участка в метрах: '))
-    sq = a * b // 100
-    return("Площадь участка: " + str(sq) + " соток.")
+    length = int(input('Введите длину участка в метрах: '))
+    withd = int(input('Введите ширину участка в метрах: '))
+    sq = length * withd // 100
+    return "Площадь участка: " + str(sq) + " соток."
+
 
 def numbers_sum(): #get the 4 digit nubmer and return its sum
     numb = input('Введите четырёхзначное число: ')
-    sum = 0
-    for i in numb:
-        sum += int(i)
-    return(f'Сумма цифр равна {sum}')
+    num_sum = 0
+    for num in numb:
+        num_sum += int(num)
+    return f'Сумма цифр равна {num_sum}'
+
 
 def sq_room_calc():
   l_room = float(input('Введите длину комнаты в метрах, дробную часть отделите точкой: '))
   w_room = float(input('Введите ширину комнаты в метрах, дробную часть отделите точкой: '))
-  return(f'Площадь комнаты {l_room * w_room} метров.')
+  return f'Площадь комнаты {l_room * w_room} метров.'
+
 
 def median_of_three(set_three):
     from statistics import median
-    return(median(set_three))
+    return median(set_three)
+
 
 def delivery_calc(num_goods):
     delivery_cost  = (int(num_goods) - 1) * 30 + 100
-    return(delivery_cost)
+    return delivery_cost
+
 
 def how_many_secs():
     inp = input('Введите количество дней, часов, минут и секунд через пробел: ')
@@ -114,6 +116,7 @@ def how_many_secs():
         counter += 1
     return secs
 
+
 def check_if_anagram():
     words = input('Введите два слова через пробел: ')
     w_list = words.split()
@@ -124,8 +127,8 @@ def check_if_anagram():
     w2_reverse = w2[::-1]
     return w1 == w2_reverse
 
-def count_days_in_month():
 
+def count_days_in_month():
     month_days = {
         'january' : 31,
         'январь' : 31,
@@ -156,7 +159,7 @@ def count_days_in_month():
     month_name = input('Введите название месяца: ')
     month_name = month_name.lower()
 
-    return(month_days.get(month_name))
+    return month_days.get(month_name)
 
 
 def price_calc():
@@ -167,12 +170,12 @@ def price_calc():
         age = int(every)
         if age < 2 or age > 65:
             cost += 0
-        elif age > 2 and age < 12:
+        elif 2 < age < 12:
             cost += 200
         else:
             cost += 500
 
-    return(cost)
+    return cost
 
 
 def days_in_month_with_leap_year():
@@ -217,7 +220,7 @@ def cycle_xy_task():
     return y
 
 
-def crypta_July_Cesar():
+def crypta_july_cesar():
     letters_small = list('qwertyuioplkjhgfdsazxcvbnm')
     letters_small.sort()
     letters_small += 'abc'
@@ -238,20 +241,22 @@ def crypta_July_Cesar():
     print(''.join(original))
     print(crypta)
 
+
 def my_list():
-    my_list = [2, 4, 8]
-    print(my_list)
-    print(my_list[::-1])
-    print(my_list)
-    print(my_list.reverse())
-    print(my_list)
+    mine_list = [2, 4, 8]
+    print(mine_list)
+    print(mine_list[::-1])
+    print(mine_list)
+    print(mine_list.reverse())
+    print(mine_list)
 
     # второе задание
-    a = [1, 1, 2, 3, 5, 8, 34, 55, 89]
-    a.sort()
-    for i in a:
-        if int(i) < 5:
-            print(i)
+    a_list = [1, 1, 2, 3, 5, 8, 34, 55, 89]
+    a_list.sort()
+    for elem in a_list:
+        if int(elem) < 5:
+            print(elem)
+
 
 def is_integer():
     number = int(input('Введите целое число: '))
@@ -259,6 +264,7 @@ def is_integer():
         print('Это число чётное.')
     else:
         print('Это число нечётное.')
+
 
 def a_b_c():
     inp_str = input('Введите значения A, B, C через запятую: ')
@@ -283,19 +289,19 @@ def a_b_c():
 def multiplication_table():
     # печатаем заголовок
     print(" ".ljust(3), end=" ")
-    for i in range(1, 11):
-        if i == 10:
-            print(str(i).ljust(3))
+    for col in range(1, 11):
+        if col == 10:
+            print(str(col).ljust(3))
         else:
-            print(str(i).ljust(3), end=" ")
+            print(str(col).ljust(3), end=" ")
 
-    for j in range(1, 11):
-        print(str(j).ljust(3), end = " ")
-        for i in range(1, 11):
-            if i == 10:
-                print(str(i * j).ljust(3))
+    for row in range(1, 11):
+        print(str(row).ljust(3), end =" ")
+        for col in range(1, 11):
+            if col == 10:
+                print(str(col * row).ljust(3))
             else:
-                print(str(i * j).ljust(3), end=" ")
+                print(str(col * row).ljust(3), end=" ")
 
 
 def lottery_numbers():
@@ -318,8 +324,15 @@ def input_integers():
         print(each_z)
 
 
-def sum_of_inputs(z=None):
-    z = int(input('Введите число или "пустую строку" для завершения: '))
+def sum_of_inputs():
+    """
+    рекурсивная функция вызывает сама себя и хранит результат в памяти,
+    пока не дойдёт условия выхода
+    """
+    z = input('Введите число или "пустую строку" для завершения: ')
+    if z == '':
+        return 0
+    else:
+        return float(z) + sum_of_inputs()
 
 
-sum_of_inputs()
