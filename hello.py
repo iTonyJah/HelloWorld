@@ -396,8 +396,12 @@ def read_the_files(files): # = ('.gitignore', 'README.md',  'foo', 'test.txt')):
 
 
 def delete_comments(orig, cut):
-    ...
+    with open(orig, 'r') as orig:
+        orig_list = orig.readlines()
+        for orig_line in orig_list:
+            splitted = orig_line.split('#', 1)
+            for spl_l in splitted:
+                print(spl_l, end ='')
 
 
-delete_comments('hello.py', 'test2.txt')
-
+delete_comments('test.txt', 'test2.txt')
