@@ -396,12 +396,18 @@ def read_the_files(files): # = ('.gitignore', 'README.md',  'foo', 'test.txt')):
 
 
 def delete_comments(orig, cut):
-    with open(orig, 'r') as orig:
-        orig_list = orig.readlines()
-        for orig_line in orig_list:
-            splitted = orig_line.split('#', 1)
-            for spl_l in splitted:
-                print(spl_l, end ='')
-
+    try:
+        with open(orig, 'r') as orig:
+            orig_list = orig.readlines()
+            stripped_list = []
+            for orig_line in orig_list:
+                # split - находит #, [0] - возвращает первый символ
+                orig_split = orig_line.split('#')[0] # .strip() - убивает всё форматирование
+                stripped_list.append(orig_split)
+        with open(cut, 'w') as cut_w:
+            for ev_line in stripped_list:
+                cut_w.write(ev_line)
+    except:
+        print('Cannot open the file.')
 
 delete_comments('test.txt', 'test2.txt')
