@@ -3,7 +3,6 @@ bar = 'from branch feature-1'
 bar += ' and from VSC as well'
 bar += ' and from VSC again. Try push via ssh.'
 bar += ' and from new PyCharm'
-print(foo, bar)
 
 set_list = []
 i = 0
@@ -355,11 +354,6 @@ def sum_of_inputs():
         return float(z) + sum_of_inputs()
 
 
-def number_figure(maximum = 100):
-    all = {}
-    ...
-
-
 def what_time_is_now():
     import time
     print(time.asctime())
@@ -379,4 +373,29 @@ def longest_word(f_name):
     print(len(cont[0]), ico)
 
 
-longest_word('.gitignore')
+def file_lines_numbering(f_inp, f_out='test.txt'):
+    with open(f_inp, 'r') as f_inp:
+        data = f_inp.readlines()
+    with open(f_out, 'w') as f_out:
+        il = 1
+        for each_l in data:
+            f_out.write(str(il) + ': ' + each_l)
+            il += 1
+
+
+def read_the_files(files): # = ('.gitignore', 'README.md',  'foo', 'test.txt')):
+    if not files : return print('Передайте список файлов!')
+    for each_f in files:
+        try:
+            with open(each_f, 'r') as file_r:
+                print(file_r)
+                for line in file_r:
+                    print(line, end="")
+        except FileNotFoundError:
+            print('Файл "', each_f, '" не открывается.')
+
+
+fls = ('', 'test.txt', 'foo')
+#fls = ''
+read_the_files(fls)
+
