@@ -395,7 +395,9 @@ def read_the_files(files): # = ('.gitignore', 'README.md',  'foo', 'test.txt')):
             print('Файл "', each_f, '" не открывается.')
 
 
-fls = ('', 'test.txt', 'foo')
-#fls = ''
-read_the_files(fls)
+def delete_comments(orig, cut):
+    ...
+
+
+delete_comments('hello.py', 'test2.txt')
 
