@@ -303,6 +303,25 @@ def multiplication_table():
             else:
                 print(str(col * row).ljust(3), end=" ")
 
+def m_table_workbook():
+    # Вот пример кода, который выводит таблицу умножения:
+    # Этот код создает двумерный список таблицы умножения.
+    a0 = [' ', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    a1 = [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    at = [a0, a1]
+    for it in range(2, 11):
+        ai = []
+        for j in a1:
+            j = j * it
+            ai.append(j)
+        at.append(ai)
+
+    # Этот код выводит таблицу умножения на экран.
+    for row in at:
+        for elem in row:
+            print(elem, end=' ')
+        print()
+
 
 def lottery_numbers():
     import random
@@ -327,7 +346,7 @@ def input_integers():
 def sum_of_inputs():
     """
     рекурсивная функция вызывает сама себя и хранит результат в памяти,
-    пока не дойдёт условия выхода
+    пока не дойдёт до условия выхода
     """
     z = input('Введите число или "пустую строку" для завершения: ')
     if z == '':
@@ -336,3 +355,28 @@ def sum_of_inputs():
         return float(z) + sum_of_inputs()
 
 
+def number_figure(maximum = 100):
+    all = {}
+    ...
+
+
+def what_time_is_now():
+    import time
+    print(time.asctime())
+
+
+def longest_word(f_name):
+    file = open(f_name, 'r')
+    text = file.read()
+    file.close()
+    cont = text.split(' ')
+    cont.sort(key=len)
+    cont.reverse()
+    ico = 0
+    while len(cont[0]) == len(cont[ico]):
+        print(cont[ico])
+        ico += 1
+    print(len(cont[0]), ico)
+
+
+longest_word('.gitignore')
