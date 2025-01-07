@@ -1,7 +1,7 @@
 numbers = {1}
 multipliers = [1]
 lines = [[1]]
-max_number = 10000000000000
+max_number = 10 ** 100
 print(1, 1, '...', '...', len(str(max_number)), max_number)
 
 def add_new_line(prime):
@@ -15,10 +15,8 @@ def add_new_line(prime):
         new_line.append(product)
         numbers.add(product)
         if product > max_number / prime:
-            if skip:
-                continue
-            else:
-                skip = True
+            if skip: continue
+            else: skip = True
         multipliers.append(product)
         multipliers.sort()
 
