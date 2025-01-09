@@ -410,4 +410,11 @@ def delete_comments(orig, cut):
     except:
         print('Cannot open the file.')
 
-delete_comments('test.txt', 'test2.txt')
+def new_element():
+    line = [0]
+    for i in line:
+        line.append(i+1)
+        print(line)
+        if i == 10: break
+
+new_element()
