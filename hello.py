@@ -178,7 +178,6 @@ def price_calc():
 
 
 def days_in_month_with_leap_year():
-
     days_31_set = {1, 3, 5, 7, 8, 10, 12}
     days_30_set = {4, 6, 9, 11}
 
@@ -248,7 +247,6 @@ def my_list():
     print(mine_list)
     print(mine_list.reverse())
     print(mine_list)
-
     # второе задание
     a_list = [1, 1, 2, 3, 5, 8, 34, 55, 89]
     a_list.sort()
@@ -271,7 +269,6 @@ def a_b_c():
     val_a = int(inp_val[0])
     val_b = int(inp_val[1])
     val_c = int(inp_val[2])
-
     if val_a == val_b:
         val_c = val_a + val_b
         val_e = val_b + val_c
@@ -281,7 +278,6 @@ def a_b_c():
     else:
         val_b += val_c
         val_e = val_a + val_b
-
     return val_e
 
 
@@ -293,7 +289,6 @@ def multiplication_table():
             print(str(col).ljust(3))
         else:
             print(str(col).ljust(3), end=" ")
-
     for row in range(1, 11):
         print(str(row).ljust(3), end =" ")
         for col in range(1, 11):
@@ -314,7 +309,6 @@ def m_table_workbook():
             j = j * it
             ai.append(j)
         at.append(ai)
-
     # Этот код выводит таблицу умножения на экран.
     for row in at:
         for elem in row:
@@ -335,7 +329,6 @@ def input_integers():
     while z != 0:
         z = int(input('Введите целое число или 0 для завершения: '))
         z_list.append(z)
-
     z_list.sort()
     for each_z in z_list:
         if int(each_z) == 0: continue
@@ -383,7 +376,7 @@ def file_lines_numbering(f_inp, f_out='test.txt'):
             il += 1
 
 
-def read_the_files(files): # = ('.gitignore', 'README.md',  'foo', 'test.txt')):
+def read_the_files(files):
     if not files : return print('Передайте список файлов!')
     for each_f in files:
         try:
@@ -407,14 +400,19 @@ def delete_comments(orig, cut):
         with open(cut, 'w') as cut_w:
             for ev_line in stripped_list:
                 cut_w.write(ev_line)
-    except:
+    except FileNotFoundError:
         print('Cannot open the file.')
 
 def new_element():
     line = [0]
-    for i in line:
+    for el in line:
         line.append(i+1)
         print(line)
-        if i == 10: break
+        if el == 10: break
 
-new_element()
+def zip_lists():
+    names = ['Anton', 'Nastya', 'Yegor']
+    ages = [45, 40, 15]
+    for name_i, age_i in zip(names, ages):
+        print(name_i, age_i)
+

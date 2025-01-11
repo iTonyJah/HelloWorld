@@ -2,7 +2,7 @@ import bisect
 numbers = {1}
 multipliers = [1]
 lines = [[1]]
-max_number = int(1 * 10 ** 9)
+max_number = int(1 * 10 ** 6)
 print_empty_line = False
 
 print(0, 1, '...', '...', '...', len(str(max_number)), max_number)
@@ -33,8 +33,7 @@ def add_new_line(prime):
           len(multipliers), len(str(new_line[-1])), new_line[-1])
 
 for i in range(1, max_number + 1):
-    if i in numbers: continue
-    add_new_line(i)
+    if i not in numbers: add_new_line(i)
 
 for line in lines: print(line)
 print('n', len(numbers), 'p', len(lines) - 1, 'm', len(multipliers))
