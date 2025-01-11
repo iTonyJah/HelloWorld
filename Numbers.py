@@ -1,7 +1,7 @@
 import bisect
 numbers = {1}
 lines = [(1,)]
-max_number = int(1 * 10 ** 6)
+max_number = int(2.3 * 10 ** 1)
 print(1, 1, '...', '...', '...', len(str(max_number)), max_number)
 
 def fill_line(prime, line, new_line, sort):
@@ -30,6 +30,9 @@ def add_new_line(prime):
 for i in range(1, max_number + 1):
     if i not in numbers:
         add_new_line(i)
+
+lines = tuple(lines)
+
 
 for l in lines: print(l)
 print('n', len(numbers), 'p', len(lines) - 1)

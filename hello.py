@@ -416,3 +416,23 @@ def zip_lists():
     for name_i, age_i in zip(names, ages):
         print(name_i, age_i)
 
+
+def flatten_tuple(tup):
+    return tuple([el for subarray in tup for el in subarray])
+
+def sum_positive_numbers(numbers):
+    ...
+
+numbers_tup = (
+    (1,),
+    (2, 4, 8, 16),
+    (3, 6, 9, 12, 18),
+    (5, 10, 15, 20),
+    (7, 14, 21),
+    (11, 22),
+    (13,),
+    (17,),
+    (19,),
+    (23,)
+    )
+numbers_tup = flatten_tuple(numbers_tup)
