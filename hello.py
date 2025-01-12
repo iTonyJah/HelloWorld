@@ -421,7 +421,10 @@ def flatten_tuple(tup):
     return tuple([el for subarray in tup for el in subarray])
 
 def sum_positive_numbers(numbers):
-    ...
+    return sum([el for el in numbers if el > 0])
+
+def process_array(numbers):
+    return [el * 2 for el in numbers if el > 0]
 
 numbers_tup = (
     (1,),
@@ -435,4 +438,7 @@ numbers_tup = (
     (19,),
     (23,)
     )
-numbers_tup = flatten_tuple(numbers_tup)
+numbers_flat = flatten_tuple(numbers_tup)
+print(numbers_flat)
+print(sum_positive_numbers(numbers_flat))
+print(process_array(numbers_flat))
