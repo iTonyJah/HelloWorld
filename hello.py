@@ -126,9 +126,7 @@ def check_if_anagram():
     w2_reverse = w2[::-1]
     return w1 == w2_reverse
 
-
-def count_days_in_month():
-    month_days = {
+month_days_dict = {
         'january' : 31,
         'январь' : 31,
         'march': 31,
@@ -154,6 +152,9 @@ def count_days_in_month():
         'february' : '28/29',
         'февраль' : '28/29'
     }
+
+def count_days_in_month():
+    month_days = month_days_dict
 
     month_name = input('Введите название месяца: ')
     month_name = month_name.lower()
@@ -420,6 +421,9 @@ def zip_lists():
 def flatten_tuple(tup):
     return tuple([el for subarray in tup for el in subarray])
 
+def flatten_tuple_keys(tup):
+    return [subarray[0] for subarray in tup for _ in subarray]
+
 def sum_positive_numbers(numbers):
     return sum([el for el in numbers if el > 0])
 
@@ -439,6 +443,11 @@ numbers_tup = (
     (23,)
     )
 numbers_flat = flatten_tuple(numbers_tup)
-print(numbers_flat)
-print(sum_positive_numbers(numbers_flat))
-print(process_array(numbers_flat))
+
+def list_to_dict(keys, values):
+    return {key_i: value_i for key_i, value_i in zip(keys, values)}
+
+keys23 = list(numbers_flat)
+values23 = flatten_tuple_keys(numbers_tup)
+dict23 = list_to_dict(keys23, values23)
+print(dict23)
