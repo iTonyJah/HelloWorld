@@ -1,14 +1,14 @@
 import bisect
 numbers = {1}
 lines = [(1,)]
-max_number = int(161.013 * 10 ** 6)
+max_number = int(1 * 10 ** 2)
 print(1, 1, '...', '...', '...', len(str(max_number)), max_number)
 
 def fill_line(prime, line, new_line, sort):
     for number in line:
         product = prime * number
         if product > max_number: break
-        if product in numbers: break
+        if product in numbers: continue
         numbers.add(product)
         if sort:
             bisect.insort_left(new_line, product)
@@ -21,37 +21,6 @@ def add_new_line(prime):
     for line in lines:
         if line[0] * prime > max_number : break
         new_line = fill_line(prime, line, new_line, sort=False)
-    new_line.sort()
-
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
-    new_line.sort()
-    new_line = fill_line(prime, new_line, new_line, sort=False)
     new_line.sort()
 
     new_line = fill_line(prime, new_line, new_line, sort=True)
