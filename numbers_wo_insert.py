@@ -25,9 +25,7 @@ def add_new_line(prime):
         temp_lines.append(new_line)
     print(temp_lines)
     new_line = [m for subarray in temp_lines for m in subarray]
-    print(new_line)
-    new_line.sort()
-    print(new_line)
+    print(temp_lines)
 
     lines.append(tuple(new_line))
     print(len(lines), new_line[0], len(new_line), len(numbers),
