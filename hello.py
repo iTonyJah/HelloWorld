@@ -450,4 +450,21 @@ def list_to_dict(keys, values):
 keys23 = list(numbers_flat)
 values23 = flatten_tuple_keys(numbers_tup)
 dict23 = list_to_dict(keys23, values23)
-print(dict23)
+
+
+def sum_n_dimensional_vectors(vectors_list):
+    for vector in vectors_list:
+        for kv in vector:
+            ...
+
+
+
+
+
+v_list = [
+    [0, 0, 1],
+    [1, 0, 0],
+    [0, 1, 0],
+]
+
+print(sum_n_dimensional_vectors(v_list))
