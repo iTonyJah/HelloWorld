@@ -460,9 +460,17 @@ def sum_n_dimensional_vectors(vectors_list):
     return tuple(result)
 
 v_list = [
-    [0, 0, 1],
-    [1, 0, 0],
-    [0, 1, 0],
+    [0, 0, 1, 0],
+    [1, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 0, 0, 1],
 ]
 
-print(sum_n_dimensional_vectors(v_list))
+def lim_max(nums, limit):
+    max_value = -1
+    for num in nums:
+        if num >= limit: continue
+        max_value = max(num, max_value)
+    return max_value
+
+print(lim_max(numbers_flat, 17))
