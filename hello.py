@@ -453,13 +453,11 @@ dict23 = list_to_dict(keys23, values23)
 
 
 def sum_n_dimensional_vectors(vectors_list):
+    result = [0 for el in vectors_list[0]]
     for vector in vectors_list:
-        for kv in vector:
-            ...
-
-
-
-
+        for count, value in enumerate(vector):
+            result[count] += value
+    return tuple(result)
 
 v_list = [
     [0, 0, 1],
