@@ -12,22 +12,16 @@ def fill_line(prime, line, new_line):
     return new_line
 
 def add_new_line(prime):
+    prime_line = [prime]
+    print(type(prime_line), type(prime))
+    prime_line = fill_line(prime, prime_line, prime_line)
+    print(prime_line)
+    lines.append(tuple(prime_line))
 
-    temp_line = [prime]
-    temp_line = fill_line(prime, temp_line, temp_line)
-    temp_lines = [temp_line]
+    new_line = [multiplier for line in lines for multiplier in line]
+    print(new_line)
+    lines.append(new_line)
 
-    for temp_line in temp_lines:
-        if len(temp_line) == 0: continue
-        if temp_line[0] * prime > max_number : break
-        new_line = []
-        new_line = fill_line(prime, temp_line, new_line)
-        temp_lines.append(new_line)
-    print(temp_lines)
-    new_line = [m for subarray in temp_lines for m in subarray]
-    print(temp_lines)
-
-    lines.append(tuple(new_line))
     print(len(lines), new_line[0], len(new_line), len(numbers),
           str(int(len(numbers) / max_number * 100)) + '%',
           len(str(new_line[-1])), new_line[-1])
