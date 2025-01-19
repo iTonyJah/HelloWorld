@@ -1,6 +1,6 @@
 numbers = {1}
 lines =[]
-max_number = int(1 * 10 ** 2)
+max_number = int(1 * 10 ** 1)
 
 def fill_line(prime, line, new_line):
     for number in line:
@@ -9,22 +9,21 @@ def fill_line(prime, line, new_line):
         if product in numbers: continue
         numbers.add(product)
         new_line.append(product)
+        print(new_line)
     return new_line
 
 def add_new_line(prime):
     prime_line = [prime]
-    print(type(prime_line), type(prime))
     prime_line = fill_line(prime, prime_line, prime_line)
     print(prime_line)
+
+    for line in lines:
+        lines.append(fill_line(prime, line, []))
     lines.append(tuple(prime_line))
 
-    new_line = [multiplier for line in lines for multiplier in line]
-    print(new_line)
-    lines.append(new_line)
-
-    print(len(lines), new_line[0], len(new_line), len(numbers),
-          str(int(len(numbers) / max_number * 100)) + '%',
-          len(str(new_line[-1])), new_line[-1])
+    # print(len(lines), new_line[0], len(new_line), len(numbers),
+    #       str(int(len(numbers) / max_number * 100)) + '%',
+    #       len(str(new_line[-1])), new_line[-1])
 
 for i in range(2, max_number + 1):
     if i not in numbers:
