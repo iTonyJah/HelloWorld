@@ -473,8 +473,24 @@ def lim_max_w_loop(nums, limit):
         max_value = max(num, max_value)
     return max_value
 
+<<<<<<< HEAD
 def lim_max(nums, limit):
     max_value = -1
     return max([num for num in nums if num < limit])
 
 print(lim_max(numbers_flat, 17))
+=======
+
+"""Домашнее задание №40: Как получить значение списка по индексу
+Цель задания — научиться получать значение списка по индексу.
+Задание
+Напишите функцию get_value_by_index, которая принимает на вход список ref_list и индекс index. 
+Функция должна вернуть значение списка ref_list по указанному индексу, 
+если список ref_list не равен None, является списком (а не другим типом данных) 
+и индекс не выходит за пределы длины списка. В любом ином случае верните значение None."""
+
+def get_value_by_index(ref_list):
+    ...
+
+print(get_value_by_index(v_list))
+>>>>>>> d05578d2d4a1ce559d635a10ca6a20f51f08241d

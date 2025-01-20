@@ -1,41 +1,52 @@
 numbers = {1}
-lines =[]
-max_number = int(1 * 10 ** 2)
+lines = []
+max_number = int(0.5 * 10 ** 1)
 
-def fill_line(prime, line, new_line):
+def fill_line(prime, line):
     for number in line:
         product = prime * number
         if product > max_number: break
-        if product in numbers: continue
+        # if product in numbers: continue
         numbers.add(product)
-        new_line.append(product)
-    return new_line
+        print(numbers)
+        line.append(product)
+    return line
 
-def add_new_line(prime):
+def add_new_prime(prime):
+    numbers.add(prime)
+    print(numbers)
+    self = fill_line(prime, [prime])
+    new_line = [self]
+    print('new_line_self', new_line)
+    print('lines', lines)
+    prev = []
+    for prime_set in lines:
+        print('prime_set', prime_set)
+        for line in prime_set:
+            print('prime, line', prime, line)
+            pre = fill_line(prime, line)
+            print('pre', pre)
+            prev.append(pre)
 
-    temp_line = [prime]
-    temp_line = fill_line(prime, temp_line, temp_line)
-    temp_lines = [temp_line]
+    print('prev', prev)
+    new_line += prev
+    print('new_line+prev', new_line)
 
-    for temp_line in temp_lines:
-        if len(temp_line) == 0: continue
-        if temp_line[0] * prime > max_number : break
-        new_line = []
-        new_line = fill_line(prime, temp_line, new_line)
-        temp_lines.append(new_line)
-    print(temp_lines)
-    new_line = [m for subarray in temp_lines for m in subarray]
-    print(temp_lines)
+    self_prev = []
+    for p in prev:
+        self_prev.append(fill_line(prime, p))
 
-    lines.append(tuple(new_line))
-    print(len(lines), new_line[0], len(new_line), len(numbers),
-          str(int(len(numbers) / max_number * 100)) + '%',
-          len(str(new_line[-1])), new_line[-1])
+    new_line += self_prev
+    print('new_line+self_prev', new_line)
+
+    lines.append(new_line)
+    print('lines', lines)
 
 for i in range(2, max_number + 1):
     if i not in numbers:
-        add_new_line(i)
+        print('i', i)
+        add_new_prime(i)
 
 lines = tuple(lines)
-for l in lines: print(l)
-print('n', len(numbers), 'p', len(lines) - 1)
+for pr in lines: print(pr)
+print('n', len(numbers), 'p', len(lines))
