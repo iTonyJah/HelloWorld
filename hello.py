@@ -466,11 +466,15 @@ v_list = [
     [0, 0, 0, 1],
 ]
 
-def lim_max(nums, limit):
+def lim_max_w_loop(nums, limit):
     max_value = -1
     for num in nums:
         if num >= limit: continue
         max_value = max(num, max_value)
     return max_value
+
+def lim_max(nums, limit):
+    max_value = -1
+    return max([num for num in nums if num < limit])
 
 print(lim_max(numbers_flat, 17))
