@@ -1,24 +1,30 @@
 numbers = {1}
 lines = []
-max_number = int(0.5 * 10 ** 1)
+max_number = int(1 * 10 ** 2)
 
 def fill_line(prime, line):
+    self = True if line[0] == prime else False
+    new_line = []
+    print('prime, line, new_line', prime, line, new_line)
     for number in line:
         product = prime * number
         if product > max_number: break
-        # if product in numbers: continue
         numbers.add(product)
         print(numbers)
-        line.append(product)
-    return line
+        if self:
+            line.append(product)
+        else:
+            new_line.append(product)
+    return line if self else new_line
 
 def add_new_prime(prime):
     numbers.add(prime)
     print(numbers)
     self = fill_line(prime, [prime])
-    new_line = [self]
-    print('new_line_self', new_line)
+    new_prime = [self]
+    print('new_prime_self', new_prime)
     print('lines', lines)
+
     prev = []
     for prime_set in lines:
         print('prime_set', prime_set)
@@ -27,19 +33,26 @@ def add_new_prime(prime):
             pre = fill_line(prime, line)
             print('pre', pre)
             prev.append(pre)
-
+            print('prev.append(pre)', prev)
+            print('lines', lines)
     print('prev', prev)
-    new_line += prev
-    print('new_line+prev', new_line)
+    if prev:
+        print('new_prime.append(prev)', prev)
+        new_prime.append(prev)
+    print('new_prime+prev', new_prime)
 
     self_prev = []
-    for p in prev:
-        self_prev.append(fill_line(prime, p))
+    for prev_line in prev:
+        print('prev_line, prev for', prev_line, prev)
+        self_prev_line = fill_line(prime, prev_line)
+        if self_prev_line:
+            self_prev.append(self_prev_line)
 
-    new_line += self_prev
-    print('new_line+self_prev', new_line)
+    if self_prev:
+        new_prime.append(self_prev)
+    print('new_prime+self_prev', new_prime)
 
-    lines.append(new_line)
+    lines.append(new_prime)
     print('lines', lines)
 
 for i in range(2, max_number + 1):
