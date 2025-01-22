@@ -1,6 +1,6 @@
 numbers = {1}
 lines = []
-max_number = int(1 * 10 ** 2)
+max_number = int(3 * 10 ** 2)
 
 def fill_line(prime, line):
     self = True if line[0] == prime else False
@@ -15,6 +15,7 @@ def fill_line(prime, line):
             line.append(product)
         else:
             new_line.append(product)
+            print('new_line.append(product)', new_line)
     return line if self else new_line
 
 def add_new_prime(prime):
