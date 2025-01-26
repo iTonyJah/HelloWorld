@@ -348,6 +348,19 @@ def sum_of_inputs():
         return float(z) + sum_of_inputs()
 
 
+def flatten_nested_list(arr):
+    result = []
+    for el in arr:
+        if type(el) == list:
+            result.extend(flatten_nested_list(el))
+        else:
+            result.append(el)
+    return result
+
+long_list = [[[1, 2, 3], [23, [13, 11], 4], [12, 16], 5], 7, [111,117]]
+print(flatten_nested_list(long_list))
+
+
 def what_time_is_now():
     import time
     print(time.asctime())
