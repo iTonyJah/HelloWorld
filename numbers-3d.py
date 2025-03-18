@@ -1,28 +1,28 @@
-numbers = {1}
-primes = []
+numbers_set = {1}
+# numbers_list = [prime_lines[prime_line_dimensions[values]]]
+numbers_list = []
 max_number = int(1 * 10 ** 2)
 
 
-def add_new_prime(new_prime):
-    numbers.add(new_prime)
-    primes.append([[new_prime]])
-    for prime in primes:
-        print(prime)
-        for dim in prime:
-            for d in dim:
+def fill_the_line(line):
+    ...
 
-                print(d)
-                product = d * new_prime
-                print(product, max_number)
-                if product > max_number: break
-                numbers.add(product)
-                prime.append([product])
+
+def add_new_prime(new_prime):
+    numbers_set.add(new_prime)
+    new_prime_line_dimension = [new_prime]
+    new_prime_line = [new_prime_line_dimension]
+
+    numbers_list.append(new_prime_line)
+
+
+    fill_the_line(new_prime_line)
 
 
 for i in range(1, max_number + 1):
-    if i not in numbers:
+    if i not in numbers_set:
         add_new_prime(i)
 
-primes = tuple(primes)
-for p in primes: print(p)
-print('n', len(numbers), 'p', len(primes) - 1)
+numbers_list = tuple(numbers_list)
+print(numbers_list)
+print('n', len(numbers_set), 'p', len(numbers_list) - 1)
