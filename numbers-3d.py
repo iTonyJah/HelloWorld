@@ -1,12 +1,12 @@
 numbers = {1}
-primes = []
+numbers_list = [ [ [] ] ]
 max_number = int(1 * 10 ** 2)
 
 
 def add_new_prime(new_prime):
     numbers.add(new_prime)
-    primes.append([[new_prime]])
-    for prime in primes:
+    numbers_list.append([[new_prime]])
+    for prime in numbers_list:
         print(prime)
         for dim in prime:
             for d in dim:
@@ -23,6 +23,6 @@ for i in range(1, max_number + 1):
     if i not in numbers:
         add_new_prime(i)
 
-primes = tuple(primes)
-for p in primes: print(p)
-print('n', len(numbers), 'p', len(primes) - 1)
+numbers_list = tuple(numbers_list)
+for p in numbers_list: print(p)
+print('n', len(numbers), 'p', len(numbers_list) - 1)
