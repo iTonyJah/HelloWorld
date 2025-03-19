@@ -9,12 +9,12 @@ def add_new_prime(new_prime):
     new_prime_line_dimension = [new_prime]
     new_prime_line = [new_prime_line_dimension]
     numbers_list.append(new_prime_line)
+    dim = 1
+    
 
-
-
-for i in range(1, max_number + 1):
-    if i not in numbers_set:
-        add_new_prime(i)
+for n in range(1, max_number + 1):
+    if n not in numbers_set:
+        add_new_prime(n)
 
 numbers_list = tuple(numbers_list)
 print(numbers_list)
