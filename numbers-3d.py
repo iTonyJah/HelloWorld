@@ -6,17 +6,19 @@ max_number = int(1 * 10 ** 2)
 
 def fill_prime_line(prime, prime_line):
     dim = 0
-    pln = 0
     for p_line in numbers_list:
-        for pl_dim in p_line:
+        while dim < len(p_line):
             npl = []
-            for i in pl_dim:
+            for i in p_line[dim]:
                 product = i * prime
+                print(product)
                 if product > max_number: break
                 numbers_set.add(product)
                 npl.append(product)
-            if npl: prime_line.append(npl)
-            print(prime_line)
+                print(i, dim, product)
+
+            prime_line.append(npl)
+            dim += 1
 
     return prime_line
 
@@ -26,6 +28,8 @@ def add_new_prime(new_prime):
     new_prime_line_dimension = [new_prime]
     new_prime_line = [new_prime_line_dimension]
     numbers_list.append(new_prime_line)
+    print(numbers_list)
+
     npl = fill_prime_line(new_prime, new_prime_line)
     numbers_list.pop(-1)
     numbers_list.append(npl)
