@@ -5,6 +5,8 @@ max_number = int(1 * 10 ** 2)
 
 
 def fill_prime_line(prime, prime_line):
+    dim = 0
+    pln = 0
     for p_line in numbers_list:
         for pl_dim in p_line:
             npl = []
