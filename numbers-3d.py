@@ -25,9 +25,6 @@ def add_new_prime(new_prime):
             max_k = max(max_k, k)
 
 
-
-
-
 for n in range(1, max_number + 1):
     if n not in numbers_set:
         add_new_prime(n)
