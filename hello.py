@@ -513,13 +513,34 @@ def find_max_length_password(target_probability, p, max_attempts):
 
     return k
 
-# Условия задачи
-target_probability = 0.5  # Гарантированная вероятность успеха
-p = 0.7  # Вероятность успешного подбора символа
-max_attempts = 1800  # Максимальное время в секундах (30 минут)
+def print_max_len():
+    # Условия задачи
+    target_probability = 0.5  # Гарантированная вероятность успеха
+    p = 0.7  # Вероятность успешного подбора символа
+    max_attempts = 1800  # Максимальное время в секундах (30 минут)
 
-# Находим максимально возможную длину пароля
-max_length = find_max_length_password(target_probability, p, max_attempts)
+    # Находим максимально возможную длину пароля
+    max_length = find_max_length_password(target_probability, p, max_attempts)
 
-# Вывод результата
-print(f"Максимально возможная длина пароля: {max_length}")
+    # Вывод результата
+    print(f"Максимально возможная длина пароля: {max_length}")
+
+
+def students_correlation():
+    import numpy as np
+    from scipy.stats import pearsonr
+
+    # Данные
+    potions_making = np.array([85, 78, 90, 88, 82, 95])
+    programming = np.array([90, 82, 92, 86, 80, 94])
+    time_to_read = np.array([10, 8, 12, 11, 9, 13])
+
+    # Коэффициент корреляции Пирсона и p-значение
+    correlation, p_value = pearsonr(potions_making, programming)
+    print(f"Коэффициент корреляции Пирсона: {correlation}")
+    print(f"P-значение: {p_value}")
+
+    # Коэффициент корреляции Пирсона и p-значение для времени на чтение
+    correlation_time, p_value_время = pearsonr(potions_making, time_to_read)
+    print(f"Коэффициент корреляции Пирсона для времени на чтение: {correlation_time}")
+    print(f"P-значение для времени на чтение: {p_value_время}")

@@ -1,7 +1,7 @@
 numbers_set = {1}
 numbers_list = []
 primes = []
-max_number = int(1 * 10 ** 3)
+max_number = int(1 * 10 ** 2)
 
 
 def add_new_prime(new_prime):
