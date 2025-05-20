@@ -1,6 +1,6 @@
 numbers_set = {1}
 numbers_list = []
-max_number = int(1 * 10 ** 100)
+max_number = int(1 * 10 ** 11)
 
 
 def fill_prime_line(prime, prime_line):
