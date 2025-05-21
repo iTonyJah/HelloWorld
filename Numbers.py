@@ -1,7 +1,7 @@
 import bisect
 numbers = {1}
 lines = [(1,)]
-max_number = int(1 * 10 ** 6)
+max_number = int(1 * 10 ** 5)
 print(1, 1, '...', '...', '...', len(str(max_number)), max_number)
 
 def fill_line(prime, line, new_line, sort):

@@ -1,10 +1,10 @@
 numbers_set = {1}
 numbers_list = []
-max_number = int(1 * 10 ** 100)
-SORT_COUNT = 0
+max_number = int(1 * 10 ** 5)
+sort_count = 0
 
 def fill_prime_line(prime, prime_line):
-    global SORT_COUNT
+    global sort_count
 
     dim = 0
     while dim < len(prime_line):
@@ -35,7 +35,7 @@ def fill_prime_line(prime, prime_line):
             if sort:
                 prime_line[dim + 1].sort()
                 sort = False
-                SORT_COUNT += 1
+                sort_count += 1
         dim += 1
 
 
@@ -50,10 +50,10 @@ def add_new_prime(new_prime):
 
 for n in range(1, max_number + 1):
     if n not in numbers_set:
-        print(n, len(numbers_set), len(numbers_list), SORT_COUNT)
+#        print(n, len(numbers_set), len(numbers_list), sort_count)
         add_new_prime(n)
 
 numbers_list = tuple(numbers_list)
 for numbers_line in numbers_list:
     print(numbers_line)
-print('n', len(numbers_set), 'p', len(numbers_list), 'sorted', SORT_COUNT)
+print('n', len(numbers_set), 'p', len(numbers_list), 'sorted', sort_count)
