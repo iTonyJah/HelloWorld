@@ -8,8 +8,7 @@ def fill_prime_line(prime, prime_line):
 
     dim = 0
     while dim < len(prime_line):
-
-        prev_prod = 0
+        max_prod = 0
         sort = False
         new = True
         for p_line in numbers_list:
@@ -17,7 +16,6 @@ def fill_prime_line(prime, prime_line):
                 break
 
             for value in p_line[dim]:
-
                 product = value * prime
                 if product > max_number:
                     break
@@ -28,14 +26,13 @@ def fill_prime_line(prime, prime_line):
                     new = False
                 prime_line[dim + 1].append(product)
 
-                if product < prev_prod:
+                if product < max_prod:
                     sort = True
-                prev_prod = product
+                max_prod = max(product, max_prod)
 
-            if sort:
-                prime_line[dim + 1].sort()
-                sort = False
-                sort_count += 1
+        if sort:
+            prime_line[dim + 1].sort()
+            sort_count += 1
         dim += 1
 
 
@@ -50,10 +47,10 @@ def add_new_prime(new_prime):
 
 for n in range(1, max_number + 1):
     if n not in numbers_set:
-#        print(n, len(numbers_set), len(numbers_list), sort_count)
+        print(len(numbers_list) + 1, n, len(numbers_set), sort_count)
         add_new_prime(n)
 
-numbers_list = tuple(numbers_list)
+
 for numbers_line in numbers_list:
     print(numbers_line)
 print('n', len(numbers_set), 'p', len(numbers_list), 'sorted', sort_count)

@@ -2,7 +2,7 @@ import bisect
 numbers = {1}
 multipliers = [1]
 lines = [[1]]
-max_number = int(1 * 10 ** 10)
+max_number = int(1 * 10 ** 11)
 print_empty_line = False
 
 print(0, 1, '...', '...', '...', len(str(max_number)), max_number)
