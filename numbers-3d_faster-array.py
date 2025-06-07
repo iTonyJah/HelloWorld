@@ -1,6 +1,8 @@
+import array
+
 numbers_set = {1}
 numbers_list = []
-max_number = int(1 * 10 ** 5)
+max_number = int(37 * 10 ** 6)
 sort_count = 0
 
 def fill_prime_line(prime, prime_line):
@@ -38,7 +40,7 @@ def fill_prime_line(prime, prime_line):
 
 def add_new_prime(new_prime):
     numbers_set.add(new_prime)
-    new_prime_line_dimension = [new_prime]
+    new_prime_line_dimension = array.array('i', [new_prime])
     new_prime_line = [new_prime_line_dimension]
     numbers_list.append(new_prime_line)
 
