@@ -358,7 +358,6 @@ def flatten_nested_list(arr):
     return result
 
 long_list = [[[1, 2, 3], [23, [13, 11], 4], [12, 16], 5], 7, [111,117]]
-print(flatten_nested_list(long_list))
 
 
 def what_time_is_now():
@@ -544,3 +543,12 @@ def students_correlation():
     correlation_time, p_value_время = pearsonr(potions_making, time_to_read)
     print(f"Коэффициент корреляции Пирсона для времени на чтение: {correlation_time}")
     print(f"P-значение для времени на чтение: {p_value_время}")
+
+
+def min_stairs():
+    ...
+
+def small_t_ferma():
+    import math
+    slice('1 2 3')
+
