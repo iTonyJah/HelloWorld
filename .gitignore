@@ -112,3 +112,6 @@ fabric.properties
 
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+
+# Any files I do not need in repo
+token_*.png
